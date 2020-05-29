@@ -42,6 +42,10 @@ img {
   content: "";
 }
 
+.nav-col {width: 66.66%; float: right; padding: 10px;}
+.col-flag {width: 150px}
+.col-title {width: 400px}
+
 .col-1 {width: 8.33%;}
 .col-2 {width: 16.66%;}
 .col-3 {width: 25%;}
@@ -72,6 +76,15 @@ nav {
 nav ul {
   overflow: hidden;
   padding: 0;
+  transform: rotate(180deg);
+}
+
+nav ul > li {
+  transform: rotate(-180deg);
+}
+
+ul.topnav {
+  float: right;
 }
 
 ul.topnav li {
@@ -98,7 +111,7 @@ ul.topnav li.dropdownIcon {
 }
 
 @media screen and (max-width: 1000px) {
-    ul.topnav li:not(:nth-child(6)) {
+    ul.topnav li:not(:nth-child(1)) {
       display: none;
     }
 
@@ -117,6 +130,7 @@ ul.topnav li.dropdownIcon {
 
     ul.topnav.responsive {
       position: relative;
+      transform: none;
     }
 
     ul.topnav.responsive li {
@@ -128,4 +142,35 @@ ul.topnav li.dropdownIcon {
       display: block;
       text-align: left;
     }
+}
+
+@media screen and (max-width: 690px) {
+  ul.topnav li:not(:nth-child(2)) {
+    display: none;
+  }
+
+  ul.topnav li.dropdownIcon {
+    display: block;
+  }
+
+  ul.topnav.responsive li.dropdownIcon {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  ul.topnav.responsive {
+    position: relative;
+    direction: ltr;
+  }
+
+  ul.topnav.responsive li {
+    display: inline;
+    float: none;
+  }
+
+  ul.topnav.responsive li a {
+    display: block;
+    text-align: left;
+  }
 }
