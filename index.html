@@ -1,5 +1,4 @@
 <!doctype html>
-
 <html lang="en">
 
 <head>
@@ -15,19 +14,20 @@
 <body>
   <div class="container">
     <div class="row">
-      <div class="col-2">
+      <div class="col-flag">
         <img src="images/flagicon.jpg" alt="Russian Flag Icon" height="80" width="111">
       </div>
-      <div class="col-3">
+      <div class="col-title">
         <h1 class="title">Здравствуйте!</h1>
       </div>
-      <div class="col-3"></div>
-      <div class="col-4">
+      <div class="col-6">
         <nav>
-          <ul class="topnav">
+          <ul class="topnav" id="dropDownClick">
             <li><a href="#">Contact</a><li>
             <li><a href="#">Recommended</a></li>
             <li><a href="#">Practice</a></li>
+            <li class="dropdownIcon" onclick="dropdownMenu()">
+              <a href="javascript:void(0);">&#9776;</a></li>
             <li><a href="#">Home</a></li>
           </ul>
         </nav>
@@ -68,6 +68,16 @@
   <p>_</p>
   <p>_</p>
 
+  <script>
+    function dropdownMenu() {
+      var x = document.getElementById("dropDownClick");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+  </script>
   <script src="js/scripts.js"></script>
 </body>
 
